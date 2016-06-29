@@ -1,14 +1,10 @@
-var express = require('express');
-var app = express();
+var http = require('http');
 
-app.use('/', express.static('./'));
-
-app.get('/', function(req, res) {
-	res.send("Hello World");
+var server = http.createServer(function(req, res) {
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.end('<h1>Hello World</h1>');
 });
 
+var port = Number( process.env.PORT || 3000);
 
-var port = Number(process.env.PORT || 3010);
-app.listen(port);
-
-console.log('Server running at http://localhost:3000');
+server.listen(port);
