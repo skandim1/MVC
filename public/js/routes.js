@@ -1,5 +1,6 @@
+'use strict';
 angular.module('shopnow',['ngRoute'])
-.config(function($routeProvider) {
+.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
 	.when('/login', {
 		templateUrl: 'template/login.html'
@@ -7,5 +8,5 @@ angular.module('shopnow',['ngRoute'])
 	.when('/signup',{
 		templateUrl: 'template/signup.html'
 	}) 
-});
+}]);
 
