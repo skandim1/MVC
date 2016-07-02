@@ -7,7 +7,7 @@ var app = express();
 
 
 app.get('/', function(req, res){
-  res.sendfile('public/templates/index.html', {root: __dirname })
+  res.sendfile('public/template/index.html', {root: __dirname })
 });
 
 
