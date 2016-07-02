@@ -10,3 +10,4 @@ angular.module('shopnow',['ngRoute'])
 	}) 
 }]);
 
+document.getElementById("test").innerHTML = "I am here";
