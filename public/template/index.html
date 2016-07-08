@@ -1,18 +1,21 @@
 <!DOCTYPE HTML> 
-<html>
+<html ng-app="shopnow">
 	<head>
 		<title>Welcome to ShopNow</title>
+		
 	</head>
-	<body ng-app="shopnow">
+	<body >
 		<h1>Welcome</h1>
 			<p>Have fun with shopping
 		<a href="#login">login</a>
 		<a href="#signup">signup</a>
 		<div ng-view> </div>
-		<script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
-		<script type="text/javascript" src="../../node_modules/angular/angular-route.min.js"></script>
+
+		<script type="text/javascript" src="../../node_modules/angular/angular.js"></script>
+		<script type="text/javascript" src="../../node_modules/angular-route/angular-route.js"></script>
 		<script type="text/javascript" src="../js/routes.js"></script>
-		<p id="test">
+		<script type="text/javascript" src="../js/controllers/loginController.js"></script>
+		<script type="text/javascript" src="../js/controllers/signupController.js"></script>
 	</body>
 
 </html>
