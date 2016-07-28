@@ -1,13 +1,51 @@
-<div ngController="loginController">
-	<form name="" action="" >
-		<label> Email:
-			<input type="email" name="username" ngModel="user.email" placeholder="email">
+<div ng-controller="loginController">
+	<div class = "page-header">
+		<h3 style="color: #90cb41;" >Login</h3>
+	</div>
+	
+<!-- 		<label> Email:
+			<input type="text"  ng-model="user.name" />
 		</label><br>
 		<label> Password:
-		<input type="password" name="password" ngModel="user.password" placeholder="password">
+		<input type="text" ng-model="user.password" />
 		</label><br>
-		<input ngClick="login(user)" type="submit" name="login">
-	</form>
+		<input ng-click="login(user)" type="submit" >
+	
+	<p>{{ uname }}</p>
+	<p>{{ user }}</p> -->
+  <div class="row">
+        <div class="alert alert-danger" ng-show="danger">
+          <h3>{{message}}</h3>
+        </div>
+      </div>
+	<form class="form-horizontal" >
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input ng-model="user.name" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input  ng-model="user.password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button ng-click="login(user)" type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </div>
+</form>
 </div>
 
 <!-- validations -->
@@ -15,4 +53,6 @@
 <!-- check in node js -->
 <!-- sending data in JSON -->
 <!-- unit testing -->
+<!-- use grunt-->
+<!-- meta data and keywords -->
 

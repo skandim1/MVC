@@ -2,20 +2,48 @@
 <html ng-app="shopnow">
 	<head>
 		<title>Welcome to ShopNow</title>
-		
+		<link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+		<link href="../stylesheets/index.css" rel="stylesheet">
 	</head>
 	<body >
-		<h1>Welcome</h1>
-			<p>Have fun with shopping
-		<a href="#login">login</a>
-		<a href="#signup">signup</a>
-		<div ng-view> </div>
-
+		<div ng-controller="homeController">
+			<home-navbar ng-if="!isLoggedIn"></home-navbar>
+			<admin-navbar ng-if="isLoggedIn && isAdmin"></admin-navbar>
+			<user-navbar ng-if="isLoggedIn &&!isAdmin"></user-navbar>
+			<p>{{title}}<p>
+			<p>{{title}}<p>
+			<p>{{isLoggedIn}}<p>
+			<p>{{isLoggedIn}}<p>
+		</div>		
+		<div class="container">
+			<div class = "row">
+				<div class = "col-lg-8 col-lg-offset-2">
+					<div class = "panel panel-default">
+						<div class = "panel-body">
+							<div ng-view ></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer-bar></footer-bar>
 		<script type="text/javascript" src="../../node_modules/angular/angular.js"></script>
 		<script type="text/javascript" src="../../node_modules/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="../../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+		<!-- <script type="text/javascript" src="../js/bootstrap.js"></script> -->
 		<script type="text/javascript" src="../js/routes.js"></script>
+		<script type="text/javascript" src="../js/controllers/homeController.js"></script>
 		<script type="text/javascript" src="../js/controllers/loginController.js"></script>
+		<script type="text/javascript" src="../js/services/loginService.js"></script>
 		<script type="text/javascript" src="../js/controllers/signupController.js"></script>
+		<script type="text/javascript" src="../js/controllers/adminController.js"></script>
+		<script type="text/javascript" src="../js/controllers/userController.js"></script>
+		<script type="text/javascript" src="../js/controllers/customerController.js"></script>
+		<script type="text/javascript" src="../js/services/customerService.js"></script>
+		<script type="text/javascript" src="../js/controllers/purchaseController.js"></script>
+		<script type="text/javascript" src="../js/services/productsAlertsService.js"></script>
+		<script type="text/javascript" src="../js/directives/navbars.js"></script>
+		<script type="text/javascript" src="../js/services/authService.js"></script>
 	</body>
 
 </html>

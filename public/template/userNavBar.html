@@ -1,0 +1,39 @@
+<div class = "navbar navbar-default navbar-fixed-top">
+	<div class = "container">
+		<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+			<span class = "icon-bar"></span>
+			<span class = "icon-bar"></span>
+			<span class = "icon-bar"></span>
+		</button>
+		<div class = "collapse navbar-collapse navHeaderCollapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="dropdown">
+					<a href="" class= "dropdown-toggle" data-toggle="dropdown">Department<b class="caret"></b></a>
+						<ul class = "dropdown-menu">
+								<!-- <?php 
+									if($numrows > 0) {
+										while($row = mysql_fetch_assoc($query)) {
+											$dbdept_name = $row['dept_name'];
+										 	echo '<li>'.'<a href= exam_new.php?hello='.urlencode($dbdept_name).'>'.$dbdept_name.'</a>';
+										}				
+									}
+									?> -->
+							</ul>
+						</li>
+					</ul>
+			<ul class = "nav navbar-nav navbar-right">
+				<li class = "active"><a href = ""><span class="glyphicon glyphicon-home"></span> Home</a></li>
+			<li class = "dropdown">
+				<a href = "" class = "dropdown-toggle" data-toggle = "dropdown"><!-- <?php echo 'Welcome '.$_SESSION['firstname'] ?> <b class="caret"></b></a> -->
+					<ul class = "dropdown-menu">
+						<li><a href="">Logout</a></li>
+					</ul>
+			</li>
+						<!-- navigate to other page and show all products in the cart and two buttons checkout and go back to shopping -->
+			<li><a href=""><span class="glyphicon glyphicon-shopping-cart"></span>cart</a></li>
+						
+		</ul>
+	</div>
+				
+</div>
+		</div>

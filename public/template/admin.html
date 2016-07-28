@@ -1,0 +1,92 @@
+<div ng-controller="adminController">
+						<div class = "page-header">
+							<h3  style="color: #00ccff;"  >Welcome</h3>
+						</div>
+						<div id = "slideshow" class = "carousel slide">
+								<ol class = "carousel-indicators">
+									<li data-target = "#slideshow" data-slide-to = "0" class = "active">
+									<li data-target = "#slideshow" data-slide-to = "1">
+								</ol>
+								<div class = "carousel-inner">
+									<div class = "item active">
+										<img class = "img-responsive" src="image/banner.png " width = "100%" >
+									</div>
+									<div class = "item">
+										<img class = "img-responsive" src="image/Blog_Banner.jpg" width = "100%" >
+									</div>
+								</div>
+								
+								<a class = "carousel-control left" href = "#slideshow" data-slide = "prev">
+									<span class = "icon-prev"></span>
+								</a>
+								<a class = "carousel-control right" href = "#slideshow" data-slide = "next">
+									<span class = "icon-next"></span>
+								</a>
+						</div>
+						
+<!-- 							<?php 
+							
+							if($numrows > 0) {
+								
+								while($row = mysql_fetch_assoc($query)) {
+									
+									$flag = 0;
+									$dbdept_name = $row['dept_name'];
+									
+									$query1 = mysql_query("select * from products where dept_name = '$dbdept_name' and qoh = '0'");
+									$numrows1 = mysql_num_rows($query1);
+									echo '<h3 style="color: #90cb41;" >'. $dbdept_name.'</h3><hr>';
+									echo '<div class = "row">';
+										if($numrows1 > 0) {
+											
+											while($row = mysql_fetch_assoc($query1)) {
+												
+												$db_pid = $row['pid'];
+												$db_pname = $row['pname'];
+												$db_price = $row['price'];
+												$db_prod_image = $row['image'];
+												$db_qoh = $row['qoh'];
+												
+												
+												echo '<div class="col-xs-6 col-md-4"><a href= edit_product.php?hello='.$db_pid.'><img height="150" width="150" src="data:image;base64,'.$db_prod_image.'"></a>';					
+												echo '<p>'.'Product Name :'.$db_pname.'</p>';
+												echo '<p>'.'Price : '.$db_price.'</p></div>';
+											
+												}
+												
+																								
+										} else {
+											echo '<div class="alert alert-info">
+											<strong>Info!</strong> We have enough products in this department.
+											</div>';
+											
+										}
+										echo '</div>';
+														
+										}
+										
+							}
+							
+						   ?>
+						    -->
+						    <div ng-repeat="x in productsAlert">
+						    	<div class = "row" ng-repeat="(key,value) in x">
+						    	<h3 style="color: #90cb41;" >{{key}}</h3><hr>
+						    		<div class="col-xs-6 col-md-4" ng-repeat="z in value">
+						    		<img height="150" width="150" ng-src="data:image;base64,{{z.image}}">
+						    			<p>Product Name : {{z.pname}}</p>
+						    			<p>Price : {{z.price}}</p>
+						    		</div>
+						    	</div>
+						    	<!-- <div class = "row">
+									<div ng-repeat="y in value">
+						    			<div class="col-xs-6 col-md-4">
+						    				<img height="150" width="150" src="data:image;base64,"+{{y.image}}>
+						    				<p>Product Name : {{y.pname}}</p>
+						    				<p>Price : {{y.price}}</p>
+						    		</div>
+						    	</div> -->
+						    </div>
+
+</div>
+	

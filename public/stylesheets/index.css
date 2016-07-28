@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.page-header {
+	margin-top: 70px;
+}
+
+.panel-body {
+	padding-top: 0;
+}
+
+.img-responsive {
+	margin-bottom: 15px;
+}
+
+body {
+	background-image: url("../image/online-shopping.gif");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.jumbotron {
+	background-image: url("../image/receipt.png");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: blur(50px);
+}
