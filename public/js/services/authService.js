@@ -3,6 +3,7 @@ module.factory('authService', function(){
 
 	
 	return {
+		
 		// setUsername: function(username) {
 		// 	this.user = username;
 		// },

@@ -7,16 +7,11 @@
 			<tr><th>Department Name</th><th>Edit</th><th>Delete</th></tr>
 		</thead>
 		<tbody>
-									<!-- <?php 
-										if($numrows > 0) {
-											while($row = mysql_fetch_assoc($query)) {
-											$dbdept_name = $row['dept_name'];
-											
-											echo '<tr>' . '<td>' . $dbdept_name . '</td>'  . 
-											'<td>'.'<a href= show_subject.php?hello='.urlencode($dbdept_name).'>Update</a>' .'</td>'.'<td>'. '<a href= manage_category.php?hello='.urlencode($dbdept_name).'>Delete</a>' .'</td>'.'</tr>';  
-											}				
-										}
-									?> -->
+			<tr ng-repeat="x in data">
+				<td>{{x.dept_name}}</td>
+				<td><a href="">Update</a></td>
+				<td><a href= "">Delete</a></td>
+			</tr>
 		</tbody>	
 	</table>
 </div>	

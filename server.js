@@ -1,23 +1,15 @@
 var http = require('http');
 
-var express = require('express');
-var app = express();
-var db_connect = require('./models/database_connection');
-var bodyParser= require('body-parser');
 
-app.use(bodyParser.json()); //parses front end request and saves it in body object
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
-app.use(bodyParser.json({ type: 'application/msword	' })); 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname+'/public'));
-app.use(express.static(__dirname+'/'));
+
+var db_connect = require('./models/database_connection');
+
+
 
 /* difference between app.use and app.set
    use res.render instead od res.sendFile
 */
-app.get('/', function(req, res){
-  res.sendFile('public/template/index.html', {root: __dirname })
-});
+var app = require('./index');
 // app.get('/admin', function(req, res){
 //   res.sendFile('public/template/admin.html', {root: __dirname })
 // });

@@ -1,6 +1,6 @@
 'use strict';
 angular.module('shopnow',['ngRoute', 'shopnow.controllers', 'shopnow.directives', 'ui.bootstrap'])
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider
 	.when('/login', {
 		templateUrl: 'template/login.html',
@@ -30,7 +30,6 @@ angular.module('shopnow',['ngRoute', 'shopnow.controllers', 'shopnow.directives'
 	})
 	.when('/add-department',{
 		templateUrl: 'template/add-department.html'
-		
 	})
 	.when('/user',{
 		templateUrl: 'template/user.html',
@@ -43,5 +42,15 @@ angular.module('shopnow',['ngRoute', 'shopnow.controllers', 'shopnow.directives'
 	.when('/purchases',{
 		templateUrl: 'template/purchases.html',
 		controller: 'purchaseController'
-	})   
-}]);
+	})
+
+	$locationProvider.html5Mode(true);   
+}])
+.run(['$rootScope','$location', function($rootScope,$location){
+	$rootScope.$on('$locationChangeStart', function(event, next, current){
+		
+		if(!localStorage.isAdmin) {
+					$location.url('/login');
+		}
+	});
+}])
